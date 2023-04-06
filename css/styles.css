@@ -1,0 +1,7 @@
+/* Example CSS for hobby image sizing */
+.hobby-image {
+    width: 200px; /* Set the width of the image */
+    height: 150px; /* Set the height of the image */
+    object-fit: cover; /* Optional: Use object-fit to control how the image fits within its container */
+  }
+  

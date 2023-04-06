@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Swim Timer Repair Project - John Marble</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<!-- Link to CSS file -->
+	<link rel="stylesheet" type="text/css" href="../css/nav.css">
+	<!-- Link to JavaScript file -->
+	<script type="text/javascript" src="../js/nav.js"></script>
+</head>
+<body>
+	<!-- Navigation bar -->
+	<nav class="navbar navbar-default navbar-vertical">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+				<a class="navbar-brand" href="../welcome.html">John Marble</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="../index.html">About</a></li>
+					<li class="dropdown">
+						<a href="../projects.html" class="dropbtn">Projects</a>
+						<div class="dropdown-content">
+							<a href="nao.html">Nao Research Projects</a>
+							<a href="hack.html">Hack-Io-Thon Weather application</a>
+							<a href="timer.html" class="active">Swim Timer Repair Project</a>
+							<a href="mobdev.html">Mobile Application Development</a>
+						</div>
+					</li>
+					<li><a href="../resume.html">Resume</a></li>
+					<li><a href="../skills.html">Skills</a></li>
+					<li class ="dropdown">
+						<a href="../hobby.html" class="dropbtn">Hobbies</a>
+						<div class="dropdown-content">
+							<a href="../hobbies/swim.html">Swimming</a>
+							<a href="../hobbies/surf.html">Surfing</a>
+							<a href="../hobbies/climb.html">Climbing</a>
+						</div>
+					</li>
+					<li><a href="../contact.html">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<section class="project-page">
+		<div class="container">
+			<h1>Swim Timer Repair Project</h1>
+
+			<!-- Project description -->
+			<h2>Project Description</h2>
+			<p>The Swim Timer Repair Project involved the complete restoration of a 50-year-old solenoid driven Colorado timing system commonly used at swim meets. The system was in disrepair and needed significant upgrades to modernize it.</p>
+			<p>Our team was able to redesign the internal circuits and drive the signals using an Arduino MEGA. We also implemented a custom-built user interface that provides ease of use and flexibility in managing the timing system. The result was a fully functional and modernized timing system that can be used in swim meets.</p>
+
+			<!-- Technologies used -->
+			<h2>Technologies Used</h2>
+			<ul>
+				<li>Arduino MEGA</li>
+				<li>Custom-built user interface</li>
+				<li>Solenoids and relays</li>
+				<li>Circuit design</li>
+			</ul>
+
+			<!-- Project images 
+			<h2>Project Images</h2>
+			<div class="row">
+				<div class="col-md-4">
+					<img src="images/swim-timer-1.jpg" alt="Swim Timer Repair Project Image 1">
+				</div>
+				<div class="col-md-4">
+					<img src="images/swim-timer-2.jpg" alt="Swim Timer Repair Project Image 2">
+				</div>
+				<div class="col-md-4">
+					<img src="images/swim-timer-3.jpg" alt="Swim Timer Repair Project Image 3">
+				</div>
+			</div>
+            -->
+
+			<!-- Project video -->
+			<h2>Project Video</h2>
+			<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="../img/demo.mp4"></iframe>
+			</div>
+
+			<!-- Project team -->
+			<h2>Project Team</h2>
+            <div class="col-md-4">
+                <img src="../img/profile.jpg" alt="Team Member 1">
+                <h3>John Marble</h3>
+                <p>Computer Engineer</p>
+            </div>
+            <div class="col-md-4">
+                <img src="../img/shawn.jpg" alt="Team Member 2">
+                <h3>Shawn Kushner</h3>
+                <p>Computer Engineer</p>
+            </div>
+        </div>
+    </section>
+
+  <script>
+    $(document).ready(function(){
+      $(".navbar-nav li a").click(function(){
+        $(".navbar-nav li a").removeClass("active");
+        $(this).addClass("active");
+      });
+    });
+</script>   
+
+</body>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>non ducor, duco</p>
+                <p>&copy; 2023 John Marble</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
