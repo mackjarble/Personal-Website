@@ -7,68 +7,77 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- Link to CSS file -->
 	<link rel="stylesheet" type="text/css" href="css/nav.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<!-- Link to JavaScript file -->
 	<script type="text/javascript" src="js/nav.js"></script>
 </head>
 <body>
-	<!-- Navigation bar -->
-	<nav class="navbar navbar-default navbar-vertical">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>                        
-				</button>
-				<a class="navbar-brand" href="welcome.html">John Marble</a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="index.html" class="active">About</a></li>
-					<li class="dropdown">
-						<a href="projects.html" class="dropbtn">Projects</a>
-						<div class="dropdown-content">
-							<a href="projects/nao.html">Nao Research Projects</a>
-							<a href="projects/hack.html">Hack-Io-Thon Weather application</a>
-							<a href="projects/timer.html">Swim Timer Repair Project</a>
-							<a href="projects/mobdev.html">Mobile Application Development</a>
-						</div>
-					</li>
-					<li><a href="resume.html">Resume</a></li>
-					<li><a href="skills.html">Skills</a></li>
-					<li class ="dropdown">
-						<a href="hobby.html" class="dropbtn">Hobbies</a>
-						<div class="dropdown-content">
-							<a href="hobbies/swim.html">Swimming</a>
-							<a href="hobbies/surf.html">Surfing</a>
-							<a href="hobbies/climb.html">Climbing</a>
-						</div>
-					</li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-	<!-- About section -->
-	<section id="about" class="section-padding">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<img src="img/profile.jpg" alt="John Doe" class="img-responsive">
+	<div class="wrapper">
+		<!-- Navigation bar -->
+		<nav class="navbar navbar-default navbar-vertical">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>                        
+					</button>
+					<a class="navbar-brand" href="welcome.html">John Marble</a>
 				</div>
-				<div class="col-md-6">
-					<h2>About Me</h2>
-					<p>As a student of Computer Engineering, I am excited about the future of engineering and the potential it holds for shaping the world we live in. I believe that engineering has the power to solve some of the most pressing challenges facing humanity, and I am committed to playing an active role in this endeavor.</p>
-					<p>I specialize in both hardware and software based applications, to solve computational based problems. I am devoted to working with my clients to develop unique solutions to any problems where my skills are applicable.</p>
-					<p>When I'm not coding, you can find me Surfing waves on the Jersey shore, Climbing outdoors, or spending time with The College of New Jersey's Men's Varsity Swim Team.</p>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html" class="active">About</a></li>
+						<li class="dropdown">
+							<a href="projects.html" class="dropbtn">Projects</a>
+							<div class="dropdown-content">
+								<a href="projects/nao.html">Nao Research Projects</a>
+								<a href="projects/hack.html">Hack-Io-Thon Weather application</a>
+								<a href="projects/timer.html">Swim Timer Repair Project</a>
+								<a href="projects/mobdev.html">Mobile Application Development</a>
+							</div>
+						</li>
+						<li><a href="resume.html">Resume</a></li>
+						<li><a href="skills.html">Skills</a></li>
+						<li class ="dropdown">
+							<a href="hobby.html" class="dropbtn">Hobbies</a>
+							<div class="dropdown-content">
+								<a href="hobbies/swim.html">Swimming</a>
+								<a href="hobbies/surf.html">Surfing</a>
+								<a href="hobbies/climb.html">Climbing</a>
+							</div>
+						</li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
 				</div>
 			</div>
-		</div>
-	</section>
+		</nav>
 
+		<!-- About section -->
+		<section id="about" class="section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<img src="img/profile.jpg" alt="John Doe" class="img-responsive">
+					</div>
+					<div class="col-md-6">
+						<h2>About Me</h2>
+						<p>As a student of Computer Engineering, I am excited about the future of engineering and the potential it holds for shaping the world we live in. I believe that engineering has the power to solve some of the most pressing challenges facing humanity, and I am committed to playing an active role in this endeavor.</p>
+						<p>I specialize in both hardware and software based applications, to solve computational based problems. I am devoted to working with my clients to develop unique solutions to any problems where my skills are applicable.</p>
+						<p>When I'm not coding, you can find me Surfing waves on the Jersey shore, Climbing outdoors, or spending time with The College of New Jersey's Men's Varsity Swim Team.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</div>
+	<div class="push"></div>	
+</body>		
 	<!-- Footer -->
-	<footer>
+	<footer class="footer">
 		<div class="container">
 		  <div class="row">
 			<div class="col-md-12 text-center">
@@ -79,9 +88,5 @@
 		</div>
 	</footer>
 
-	<!-- jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- Bootstrap JS -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</body>
+	
 </html>

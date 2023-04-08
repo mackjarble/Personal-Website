@@ -4,4 +4,34 @@
     height: 150px; /* Set the height of the image */
     object-fit: cover; /* Optional: Use object-fit to control how the image fits within its container */
   }
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px; /* Height of the footer */
+}
+
+.footer,
+.push {
+  height: 50px; /* Height of the footer */
+}
+
+.footer {
+  background-color: #55afd5;
+  text-align: center;
+}
+
+/* Style adjustments for mobile devices */
+@media (max-width: 767px) {
+  .footer {
+    position: relative;
+    margin-top: -50px; /* Negative value of footer height */
+    height: auto;
+  }
+}
+
   
