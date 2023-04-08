@@ -22,7 +22,7 @@
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #0072C6;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -38,7 +38,7 @@
   
   /* Change color of dropdown links on hover */
   .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #79d0f5;
   }
   
   /* Show the dropdown menu on hover */
@@ -48,7 +48,41 @@
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {
-    background-color: #bcbcbc;
+    background-color: #386495;
     color: white;
   }
+  
+  .navbar {
+    background-color: #00528c;
+    border-bottom: 2px solid #333333;
+  }
+
+  .navbar-default{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /*Set the color of the links of the navbar */
+  .navbar-default .navbar-nav > li > a,
+  .navbar-default .navbar-nav > li > a:focus {
+      color: #FFFFFF; /* white color */
+  }
+  
+  .navbar-default .navbar-brand {
+      color: #FFFFFF; /* white color */
+  }
+
+  /*Set the color of the links of the navbar, when hovered */
+  .navbar-default .navbar-nav > li > a:hover,
+  .navbar-default .navbar-nav > li > a:focus:hover {
+      color: #192d43; /* white color */
+  }
+  
+  .navbar-default .navbar-brand:hover {
+      color: #192d43; /* white color */
+  }
+
+
+  
+  
   
