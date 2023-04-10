@@ -26,31 +26,31 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>                        
 					</button>
-					<a class="navbar-brand" href="index.html">John Marble</a>
+					<a class="navbar-brand" href="../index.html">John Marble</a>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="about.html">About</a></li>
+						<li><a href="../about.html">About</a></li>
 						<li class="dropdown">
-							<a href="projects.html" class="dropbtn">Projects</a>
+							<a href="../projects.html" class="dropbtn">Projects</a>
 							<div class="dropdown-content">
-								<a href="projects/nao.html">Nao Research Projects</a>
-								<a href="projects/hack.html">Hack-Io-Thon Weather application</a>
-								<a href="projects/timer.html">Swim Timer Repair Project</a>
-								<a href="projects/mobdev.html">Mobile Application Development</a>
+								<a href="../projects/nao.html">Nao Research Projects</a>
+								<a href="../projects/hack.html">Hack-Io-Thon Weather application</a>
+								<a href="../projects/timer.html">Swim Timer Repair Project</a>
+								<a href="../projects/mobdev.html">Mobile Application Development</a>
 							</div>
 						</li>
-						<li><a href="resume.html">Resume</a></li>
-						<li><a href="skills.html">Skills</a></li>
+						<li><a href="../resume.html">Resume</a></li>
+						<li><a href="../skills.html">Skills</a></li>
 						<li class ="dropdown">
-							<a href="hobby.html" class="dropbtn">Hobbies</a>
+							<a href="../hobby.html" class="dropbtn">Hobbies</a>
 							<div class="dropdown-content">
-								<a href="hobbies/swim.html">Swimming</a>
-								<a href="hobbies/surf.html">Surfing</a>
-								<a href="hobbies/climb.html">Climbing</a>
+								<a href="../hobbies/swim.html">Swimming</a>
+								<a href="../hobbies/surf.html">Surfing</a>
+								<a href="../hobbies/climb.html">Climbing</a>
 							</div>
 						</li>
-						<li><a href="contact.html" class="active">Contact</a></li>
+						<li><a href="../php/contact.php" class="active">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -63,6 +63,12 @@
 				<div class="col-md-6">
 					<form action="php/mail.php" method="post">
 					<h2>Contact me</h2>
+					<?php
+					// Generate CSRF token
+					if (!isset($_SESSION['csrf_token'])) {
+					  $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+					}
+					?>
 					<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 					<div class="form-group">
 						<label for="name">Name</label>

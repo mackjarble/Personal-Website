@@ -4,12 +4,6 @@ session_start();
 // Check if the form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-  // Validate the CSRF token
-  if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-    echo "Invalid CSRF token";
-    exit();
-  }
-
   // Get the form data
   $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
   $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
@@ -18,6 +12,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Validate the email address
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo "Invalid email address";
+    exit();
+  }
+
+  // Validate the CSRF token
+  if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+    echo "Invalid CSRF token";
     exit();
   }
 
