@@ -10,8 +10,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
     <!-- Link to CSS file -->
-	<link rel="stylesheet" type="text/css" href="css/nav.css">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="../css/nav.css">
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
 	<!-- Link to JavaScript file -->
 	<script type="text/javascript" src="js/nav.js"></script>
 </head>
@@ -56,43 +56,92 @@
 			</div>
 		</nav>
 
+		<?php
+		session_start();
+
+		// Check if the form was submitted
+		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+		// Get the form data
+		$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+		$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+		$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+
+		// Validate the email address
+		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			echo "Invalid email address";
+			exit();
+		}
+
+		// Validate the CSRF token
+		if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+			echo "Invalid CSRF token";
+			exit();
+		}
+
+		// Set the recipient email address
+		$to = 'mackjarble@gmail.com';
+
+		// Set the subject of the email
+		$subject = 'New message from ' . $name;
+
+		// Set the message body
+		$body = 'Name: ' . $name . "\n";
+		$body .= 'Email: ' . $email . "\n";
+		$body .= 'Message: ' . $message . "\n";
+
+		// Send the email
+		$headers = "From: $email";
+		$result = mail($to, $subject, $body, $headers);
+
+		if ($result) {
+			echo "Email sent successfully";
+		} else {
+			$error = error_get_last();
+			$error_message = isset($error['message']) ? $error['message'] : 'Unknown error';
+			echo "Email sending failed: $error_message";
+		}
+		}
+
+		?>
+
 		<h1 class="text-center">Contact Information</h1>
 		<hr class="my-hr">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<form action="php/mail.php" method="post">
-					<h2>Contact me</h2>
-					<?php
-					// Generate CSRF token
-					if (!isset($_SESSION['csrf_token'])) {
-					  $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-					}
-					?>
-					<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-					<div class="form-group">
-						<label for="name">Name</label>
-						<input type="text" class="form-control" id="name" name="name" required>
-					</div>
-					<div class="form-group">
-						<label for="email">Email address</label>
-						<input type="email" class="form-control" id="email" name="email" required>
-					</div>
-					<div class="form-group">
-						<label for="message">Message</label>
-						<textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-					</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+						<h2>Contact me</h2>
+						<?php
+						// Generate CSRF token
+						if (!isset($_SESSION['csrf_token'])) {
+						$_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+						}
+						?>
+						<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" class="form-control" id="name" name="name" required>
+						</div>
+						<div class="form-group">
+							<label for="email">Email address</label>
+							<input type="email" class="form-control" id="email" name="email" required>
+						</div>
+						<div class="form-group">
+							<label for="message">Message</label>
+							<textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
 					</form>
 				</div>
 				<div class="col-md-6">
 					<div class="media-icons">
 						<h2>Connect with me</h2>
 						<ul class="list-unstyled">
-						<li style="font-size: 40px;" class="text-center"><a href="https://www.facebook.com/jack.marble.792"><img src="img/facebook.png" style="max-width: 25%; height: auto;">Facebook</a></li>
-						<li style="font-size: 40px;" class="text-center"><a href="https://www.linkedin.com/in/john-marble-15aa23246/"><img src="img/linkedin.png" style="max-width: 17%; height: auto;">LinkedIn</a></li>
-						<li style="font-size: 40px;" class="text-center"><a href="https://www.instagram.com/mackjarble/?hl=en"><img src="img/insta.png" style="max-width: 17%; height: auto;">Instagram</a></li>
-						<li style="font-size: 40px;" class="text-center"><a href="https://github.com/mackjarble"><img src="img/GitHub.png" style="max-width: 17%; height: auto;">GitHub</a></li>
+						<li style="font-size: 40px;" class="text-center"><a href="https://www.facebook.com/jack.marble.792"><img src="../img/facebook.png" style="max-width: 25%; height: auto;">Facebook</a></li>
+						<li style="font-size: 40px;" class="text-center"><a href="https://www.linkedin.com/in/john-marble-15aa23246/"><img src="../img/linkedin.png" style="max-width: 17%; height: auto;">LinkedIn</a></li>
+						<li style="font-size: 40px;" class="text-center"><a href="https://www.instagram.com/mackjarble/?hl=en"><img src="../img/insta.png" style="max-width: 17%; height: auto;">Instagram</a></li>
+						<li style="font-size: 40px;" class="text-center"><a href="https://github.com/mackjarble"><img src="../img/GitHub.png" style="max-width: 17%; height: auto;">GitHub</a></li>
 						</ul>
 					</div>
 				</div>
