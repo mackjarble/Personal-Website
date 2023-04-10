@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Welcome to My Site!</title>
-    <!-- Bootstrap CSS -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>About | John Marble</title>
+	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- Link to CSS file -->
+	<!-- Link to CSS file -->
 	<link rel="stylesheet" type="text/css" href="css/nav.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<!-- Link to JavaScript file -->
 	<script type="text/javascript" src="js/nav.js"></script>
-
-  </head>
+</head>
 <body class="body">
 	<div class="wrapper">
 		<!-- Navigation bar -->
@@ -23,11 +22,11 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>                        
 					</button>
-					<a class="navbar-brand" href="welcome.html">John Marble</a>
+					<a class="navbar-brand" href="index.html">John Marble</a>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="index.html" class="active">About</a></li>
+						<li><a href="about.html" class="active">About</a></li>
 						<li class="dropdown">
 							<a href="projects.html" class="dropbtn">Projects</a>
 							<div class="dropdown-content">
@@ -53,31 +52,31 @@
 			</div>
 		</nav>
 
-		<div class="container">
-		<h1>Welcome to My Site!</h1>
-		<hr class="my-hr">
-		<p style="font-size: 28px;">Thank you for visiting my website. My name is John (Jack) Marble, and I am a student at The College of New Jersey based in the beautiful Ewing, NJ.</p>
-		<p style="font-size: 28px;">On this website, you will find information about my hobbies, skills, and projects that I have worked on. I am passionate about swimming, surfing and climbing, and I am always looking for new opportunities to learn and grow in my field.</p>
-		<p style="font-size: 28px;">Please feel free to browse around and check out my projects that I have worked on over the past year and the skills that I have honed in while working on them. If you have any questions or would like to get in touch with me, you can reach me by filling out the contact form.</p>
-		<p style="font-size: 28px;">Thank you again for visiting, and I hope you enjoy exploring my website!</p>
-		</div>
+		<!-- About section -->
+		<section id="about" class="section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<img src="img/profile.jpg" alt="John Doe" class="img-responsive">
+					</div>
+					<div class="col-md-6">
+						<h1>About Me</h1>
+						<hr class="my-hr">
+						<p class="about">As a student of Computer Engineering, I am excited about the future of engineering and the potential it holds for shaping the world we live in. I believe that engineering has the power to solve some of the most pressing challenges facing humanity, and I am committed to playing an active role in this endeavor.</p>
+						<p class="about">I specialize in both hardware and software based applications, to solve computational based problems. I am devoted to undertaking challenges that require the development of unique solutions to further my knowledge and experience.</p>
+						<p class="about">When I'm not coding, you can find me Surfing waves on the Jersey shore, Climbing outdoors, or spending time with The College of New Jersey's Men's Varsity Swim Team.</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-		<script>
-			$(document).ready(function(){
-			$(".navbar-nav li a").click(function(){
-				$(".navbar-nav li a").removeClass("active");
-				$(this).addClass("active");
-			});
-			});
-		</script>   
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<!-- Bootstrap JS -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>   
-	</div>	
-	<div class="push"></div>
-</body>
-
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</div>
+	<div class="push"></div>	
+</body>		
 	<!-- Footer -->
 	<footer class="footer">
 		<div class="container">
@@ -89,4 +88,6 @@
 		  </div>
 		</div>
 	</footer>
+
+	
 </html>

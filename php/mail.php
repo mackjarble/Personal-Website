@@ -18,6 +18,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $body .= 'Message: ' . $message . "\n";
 
   // Send the email
-  mail($to, $subject, $body);
+  $result = mail($to, $subject, $body);
+
+  if ($result) {
+    echo "Email sent successfully";
+  } else {
+    $error = error_get_last();
+    $error_message = isset($error['message']) ? $error['message'] : 'Unknown error';
+    echo "Email sending failed: $error_message";
+  }
 }
 ?>
